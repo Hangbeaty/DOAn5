@@ -1,0 +1,36 @@
+.btn-default{
+  color: #ffffff !important;
+    background: #3B82F6;
+    border: 1px solid #3B82F6;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    border-radius: 6px;
+}
+.btn-default:hover {
+  color: #ffffff !important;
+  background: #3B82F6;
+  border: 1px solid #3B82F6;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  border-radius: 6px;
+}
+.btn-danger{
+  color: #ffffff !important;
+  background: red;
+  border: 1px solid red;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  border-radius: 6px;
+}
+.btn-danger :hover{
+  color: #ffffff !important;
+  background: red;
+  border: 1px solid red;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+  border-radius: 6px;
+}

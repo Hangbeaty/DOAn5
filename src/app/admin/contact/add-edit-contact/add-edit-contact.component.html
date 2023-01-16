@@ -1,0 +1,28 @@
+<div class="form-froup row">
+
+    <label class="col-sm-2 col-form-label"> Name</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Name" Categoryholder="Enter Name">
+    </div>
+    <label class="col-sm-2 col-form-label"> Email</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Email" Categoryholder="Enter Email">
+    </div>
+    <label class="col-sm-2 col-form-label"> Phone</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Phone" Categoryholder="Enter Phone ">
+    </div>
+    <label class="col-sm-2 col-form-label">Content</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Content" Categoryholder="Enter Content">
+    </div>
+  </div>
+
+  <button (click)="addContact()" *ngIf="cat.CustomerID==0" class="btn btn-primary">
+    Add
+  </button>
+
+  <button (click)="updateContact()" *ngIf="cat.CustomerID!=0" class="btn btn-primary">
+    Update
+  </button>
+

@@ -1,0 +1,47 @@
+<app-header></app-header>
+<main class="page-content">
+
+  <!-- Blog Area -->
+  <div class="blog-area bg-white section-padding-md" style="margin-left:200px">
+    <article class="blog-item">
+      <div class="row" *ngFor="let item of newList
+      | paginate
+                    : {
+                        itemsPerPage: 3,
+                        currentPage: page,
+                        totalItems: totalLength
+                      }
+      ">
+          <div class="col-lg-5 col-12">
+              <div class="blog-item-thumb">
+                <a
+                class="product-item-image-inner">
+                <p-image src="http://localhost:5000/Photos/{{ item.image }}" alt="Image" width="50px"></p-image>
+
+              </a>
+              </div>
+          </div>
+          <div class="col-lg-7 col-12">
+              <div class="blog-item-content">
+                  <h4 class="blog-item-title"><a>{{item.newName}}</a></h4>
+                  <div class="blog-item-meta"><i class="fa fa-clock-o"></i> Người đăng:<a href="blog.html">LeHang</a></div>
+                  <p><a>{{item.description}}</a></p>
+
+              </div>
+          </div>
+      </div>
+  </article>
+              <!--// Blog Item -->
+
+              <!-- Blog Item -->
+
+              <!--// Blog Item -->
+              <pagination-controls
+              (pageChange)="pageChange($event)"
+            ></pagination-controls>
+  </div>
+
+  <!--// Blog Area -->
+
+</main>
+<app-footer></app-footer>

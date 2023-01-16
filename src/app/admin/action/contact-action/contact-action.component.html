@@ -1,0 +1,57 @@
+<div class="p-dialog-header">
+    <span class="p-dialog-title">{{ title }}</span>
+    <div class="p-dialog-header-icons">
+      <button type="button" class="p-dialog-header-icon p-dialog-header-maximize p-link" (click)="cancel()">
+        <span class="p-dialog-header-close-icon pi pi-times"></span>
+      </button>
+    </div>
+  </div>
+  <div class="mt-3 p-dialog-body grid p-fluid">
+
+    <div class="flex">
+        <div class="col-6 mt-2" [formGroup]="form">
+            <div class="p-field">
+              <span class="p-float-label">
+                <input type="tex" class="p-inputtext-sm" pInputText formControlName="name" />
+                <label for="inputtext">Tên khách hàng</label>
+              </span>
+             <!-- // <f-errors [errors]="form.get('code')"></f-errors> -->
+            </div>
+          </div>
+          <div class="col-6" [formGroup]="form">
+              <div class="p-field">
+                <span class="p-float-label">
+                  <input type="tex" class="p-inputtext-sm" pInputText formControlName="email" />
+                  <label for="inputtext">Email</label>
+                </span>
+               <!-- // <f-errors [errors]="form.get('code')"></f-errors> -->
+              </div>
+            </div>
+            <div class="col-6 mt-2" [formGroup]="form">
+              <div class="p-field">
+                <span class="p-float-label">
+                  <input type="tex" class="p-inputtext-sm" pInputText formControlName="phone" />
+                  <label for="inputtext">Số điện thoại</label>
+                </span>
+               <!-- // <f-errors [errors]="form.get('code')"></f-errors> -->
+              </div>
+            </div>
+            <div class="col-6" [formGroup]="form">
+              <div class="p-field">
+                <span class="p-float-label">
+                  <input type="tex" class="p-inputtext-sm" pInputText formControlName="content" />
+                  <label for="inputtext">Nội dung</label>
+                </span>
+               <!-- // <f-errors [errors]="form.get('code')"></f-errors> -->
+              </div>
+            </div>
+
+    </div>
+
+
+
+  </div>
+  <div class="p-dialog-footer p-p-0 p-mt-3">
+    <button pButton *ngIf="screenType !== 2" (click)="save()" label="Lưu" icon="pi pi-check" class="mr-2"></button>
+    <button pButton (click)="cancel()" label="Đóng" icon="pi pi-times" class="p-button-danger"></button>
+  </div>

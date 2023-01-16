@@ -1,0 +1,45 @@
+
+<section class="vh-100" style="background-color: #508bfc;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100" [formGroup]="form">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <h3 class="mb-5">Đăng nhập</h3>
+
+            <div class="form-outline mb-4">
+              <span class="p-float-label">
+                <input type="tex" class="p-inputtext-sm" pInputText formControlName="customerEmail" />
+                <label for="inputtext">Email *</label>
+            </span>
+            <f-errors [errors]="form.get('customerEmail')"></f-errors>
+            </div>
+
+            <div class="form-outline mb-4">
+              <span class="p-float-label">
+                <input p-dialog-body type="text" formControlName="password" class="p-inputtext-sm"
+                    pInputText />
+                <label for="inputtext">Mật khẩu <span style="color: red;">*</span></label>
+            </span>
+            <f-errors [errors]="form.get('password')"></f-errors>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-check d-flex justify-content-start mb-4">
+              <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+              <label class="form-check-label" for="form1Example3"> Remember password </label>
+            </div>
+
+            <button  (click)="login()" class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+            <p-toast></p-toast>
+            <hr class="my-4">
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

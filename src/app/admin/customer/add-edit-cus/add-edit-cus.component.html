@@ -1,0 +1,28 @@
+<div class="form-froup row">
+
+    <label class="col-sm-3 col-form-label">Tên khách hàng</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="CustomerName" Categoryholder="Enter Customer Name">
+    </div>
+    <label class="col-sm-3 col-form-label">Email khách hàng</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="CustomerEmail" Categoryholder="Enter CustomerEmail">
+    </div>
+    <label class="col-sm-3 col-form-label">Số điện thoại</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="CustomerPhone" Categoryholder="Enter Customer Phone ">
+    </div>
+    <label class="col-sm-3 col-form-label">Địa chỉ khách hàng</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="CustomerAdress" Categoryholder="Enter Customer Adress">
+    </div>
+  </div>
+
+  <button (click)="addCustomer()" *ngIf="cat.CustomerID==0" class="btn btn-primary">
+    Add
+  </button>
+
+  <button (click)="updateCustomer()" *ngIf="cat.CustomerID!=0" class="btn btn-primary">
+    Update
+  </button>
+

@@ -1,0 +1,108 @@
+<app-header></app-header>
+<main class="page-content">
+
+  <!-- Product Page Wrapper -->
+  <div class="product-page-wrapper section-padding-bottom-md">
+    <div class="container">
+
+      <!-- Shop Breadcrumb -->
+      <!--// Shop Breadcrumb -->
+
+      <!-- Product Details Inner -->
+      <div class="product-details">
+
+        <!-- Product Details Left -->
+        <div class="product-details-left">
+          <div class="product-details-images slider-navigation-2">
+            <a href="img/product/large-size/product-image-1.jpg">
+              <p-image src="http://localhost:5000/Photos/{{ itemRequest?.image }}" alt="Image" width="500px"></p-image>
+            </a>
+
+          </div>
+          <!-- <div class="product-details-thumbs slider-navigation-2">
+            <img src="img/product/small-size/product-image-1.jpg" alt="product image thumb">
+            <img src="img/product/small-size/product-image-2.jpg" alt="product image thumb">
+            <img src="img/product/small-size/product-image-3.jpg" alt="product image thumb">
+            <img src="img/product/small-size/product-image-4.jpg" alt="product image thumb">
+            <img src="img/product/small-size/product-image-5.jpg" alt="product image thumb">
+          </div> -->
+        </div>
+        <!--// Product Details Left -->
+
+        <!-- Product Details Right -->
+        <div class="product-details-right">
+          <h5 class="product-title">{{itemRequest?.tourName
+            }}</h5>
+
+
+
+          <p *ngFor="let item of itemRequest?.description?.split('\n')">{{item}}.</p>
+
+          <div class="price-box">
+            <span class="pricebox-price">{{itemRequest?.price |number:'1.0-0'}}  VND</span>
+          </div>
+
+          <div class="product-details-quantity">
+            <div class="quantity-select">
+              <input type="text" value="1">
+            </div>
+            <a  class="add-to-cart-button">
+              <span><a (click)="getUrlByOrder(itemRequest?.tourId!)">Đặt tour</a></span>
+            </a>
+          </div>
+
+
+
+
+
+
+          <div class="product-details-categories">
+            <span>Loại Tour :</span>
+            <ul>
+              <li><a >{{itemRequest?.categoryName}}</a></li>
+
+            </ul>
+          </div>
+
+          <div class="product-details-tags">
+            <span>Địa điểm :</span>
+            <ul>
+              <li><a>{{itemRequest?.placeName}}</a></li>
+
+            </ul>
+          </div>
+
+          <div class="product-details-socialshare">
+            <span>Chia sẻ :</span>
+            <ul>
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <!--// Product Details Right -->
+
+      </div>
+      <!--// Product Details Inner -->
+
+      <!-- Product Details Review -->
+
+      <!--// Product Details Review -->
+
+    </div>
+
+  </div>
+  <!--// Product Page Wrapper -->
+
+  <!-- Features Area -->
+
+  <!--// Features Area -->
+
+
+  <!--// Newsletter & Brand Logos Area -->
+
+</main>
+<app-footer></app-footer>

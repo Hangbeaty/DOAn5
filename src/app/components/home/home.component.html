@@ -1,0 +1,120 @@
+<app-header   (refreshData)="refresh($event)"></app-header>
+<div class="hero-area slider-navigation-1">
+  <div
+    class="single-hero-item d-flex align-items-center"
+    style="background-image: url(../../../assets/Image/avata1.jpg)"
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 col-lg-8 col-md-9 offset-xl-1 offset-0">
+          <div class="hero-content">
+            <a href="shop-right-sidebar.html" class="sn-button">
+              <span>Đặt Tour ngay</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--// Hero Area -->
+
+<!-- Page Conttent -->
+<main class="page-content">
+  <!-- Products Area -->
+  <div class="products-area bg-white section-padding-md">
+    <div class="container">
+      <ul class="nav products-tab-trigger" id="myTab" role="tablist" >
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            style="margin-left: 470px; font-size: 50px"
+            role="tab"
+            aria-controls="products-of-accessories"
+            aria-selected="true"
+            >Tour</a>
+        </li>
+      </ul>
+      <!-- <div class="flex">
+        <div class="col-6">
+          <div class="p-field">
+            <span class="p-float-label">
+              <input
+                type="text"
+                class="p-inputtext-sm"
+                pInputText
+                [(ngModel)]="params.name"
+              />
+            </span>
+          </div>
+        </div>
+        <div class="col-2">
+          <button pButton label="Tìm kiếm" (click)="getAllTour(true)"></button>
+        </div>
+      </div> -->
+
+      <div class="tab-content mb-5" id="myTabContent">
+        <div
+          class="tab-pane fade show active"
+          id="products-of-accessories"
+          role="tabpanel"
+          aria-labelledby="products-of-accessories-tab"
+        >
+          <div class="row justify-content-start products-wrapper">
+            <div
+              class="col-xl-3 col-lg-4 col-md-4 col-sm-6 col-12"
+              *ngFor="
+                let item of tourList
+                  | paginate
+                    : {
+                        itemsPerPage: 8,
+                        currentPage: page,
+                        totalItems: totalLength
+                      }
+              "
+            >
+              <div class="product-item">
+                <div class="product-item-images">
+                  <a
+                    (click)="viewDetail(item.tourId!)"
+                    class="product-item-image-inner"
+                  >
+                    <p-image
+                      src="http://localhost:5000/Photos/{{ item.image }}"
+                      alt="Image"
+                      height="250px"
+                      width="600px"
+                    ></p-image>
+                  </a>
+                </div>
+
+                <div class="product-item-content">
+                  <div class="product-item-content-left">
+                    <h5>
+                      <a style="font-weight: 600; font-size: 20px">{{
+                        item.tourName
+                      }}</a>
+                    </h5>
+                    <h6>
+                      Thời gian:<a>{{ item.time }}</a>
+                    </h6>
+                    <div class="price-box">
+                      <span class="pricebox-price">
+                        {{ item.price | number : "1.0-0" }} VNĐ
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pagination-controls
+        (pageChange)="pageChange($event)"
+      ></pagination-controls>
+    </div>
+    <!-- Features Area -->
+    <app-footer></app-footer>
+  </div>
+</main>

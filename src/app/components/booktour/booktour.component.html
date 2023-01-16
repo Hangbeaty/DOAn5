@@ -1,0 +1,110 @@
+<app-header></app-header>
+<div class="sn-breadcrumb-are bg-theme section-padding-xs">
+  <div class="container">
+    <div class="sn-breadcrumb text-center">
+      <h3>ĐẶT TOUR</h3>
+    </div>
+  </div>
+</div>
+<main class="page-content">
+  <!-- Checkout Area -->
+  <div class="checkout-area bg-white section-padding-md">
+    <div class="container" [formGroup]="form!">
+      <div class="row">
+        <!-- Billing Details -->
+        <div class="col-lg-6">
+          <h3 class="small-title">Chi tiết đặt tour</h3>
+          <div class="sn-form">
+            <div class="sn-form-inner">
+              <div class="single-input single-input-half">
+                <label for="customer-firstname">Họ Tên *</label>
+                <input pInputText type="text" formControlName="orderName" />
+              </div>
+              <div class="single-input single-input-half">
+                <label for="customer-lastname">Email *</label>
+                <input pInputText formControlName="orderEmail" />
+              </div>
+              <div class="single-input single-input-half">
+                <label for="customer-email">Số điện thoại *</label>
+                <input
+                  pInputText
+                  name="customer-email"
+                  id="customer-email"
+                  formControlName="orderPhone"
+                />
+              </div>
+              <div class="single-input single-input-half">
+                <label for="customer-phone">Địa chỉ *</label>
+                <input
+                  pInputText
+                  type="text"
+                  name="customer-phone"
+                  id="customer-phone"
+                  formControlName="orderAdress"
+                />
+              </div>
+              <div class="single-input single-input-half">
+                <label for="customer-phone">Ngày bắt đầu *</label>
+                <p-calendar
+                  dateFormat="dd/mm/yy"
+                  formControlName="startDate"
+                  appendTo="body"
+                  [showIcon]="true"
+                >
+                </p-calendar>
+              </div>
+              <div class="single-input single-input-half">
+                <label for="customer-phone">Ghi chú</label>
+                <input
+                  pInputText
+                  type="text"
+                  name="customer-phone"
+                  id="customer-phone"
+                  formControlName="note"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--// Billing Details -->
+
+        <!-- Place Order -->
+        <div class="col-lg-6">
+          <div class="order-infobox">
+            <h3 class="small-title">Thông tin đặt tour</h3>
+            <div class="checkout-table table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th class="text-left">Tên tour :</th>
+                    <th class="text-right">Tổng tiền :</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-left">{{ itemRequest?.tourName }}</td>
+                    <td class="text-right">
+                      {{ itemRequest?.price | number : "1.0-0" }} VNĐ
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <button
+              class="sn-button sn-button mt-30"
+              pButton
+              (click)="orderTour()"
+              type="submit"
+            >
+              <span>Thanh Toán</span>
+            </button>
+          </div>
+        </div>
+        <!--// Place Order -->
+      </div>
+    </div>
+  </div>
+  <!--// Checkout Area -->
+</main>
+<app-footer></app-footer>
